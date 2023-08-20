@@ -141,6 +141,10 @@
     width: 350px;   
     transition: 1s ease;    
 }
+img{
+    width: 350px;   
+    transition: 1s ease;    
+}
 .name{
     color: var(--main-color);
 }
