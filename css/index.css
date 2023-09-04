@@ -100,13 +100,14 @@
     display: flex;
 }
 .cv{
-    padding: 12px 20px;
     background-color: var(--main-color);
+    padding: 12px 20px;
     color: #fff;
     border-radius: 10px;
     border: #fff;
     font-weight:600;
     margin-right:10px;
+    margin-bottom: 15px;
     cursor: pointer;
     text-decoration: none;
 }
