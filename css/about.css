@@ -48,14 +48,14 @@
 }
 .homeleft{
     height: 80vh;
-    width: 50%;
+    width: 40%;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
 .homeright{
     margin-top: 5%;
-    width: 50%;
+    width: 40%;
     align-items: center;
     justify-content: center;
 }
@@ -81,4 +81,17 @@ h1{
     cursor: pointer;
     display: inline-block;
     margin-top: 20px;
+}
+@media only screen and (max-width: 600px) {
+    .homeleft{
+        display: none;
+    }
+    .homeright{
+        margin: 10%;
+    }
+    .content{
+        font-size: 10px;
+        width: 200%;
+    }
+
 }
