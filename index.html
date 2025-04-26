@@ -1,68 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="./css/index.css"/>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sathish Kumar V</title>
+
+  <!-- Google Fonts + FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #e0e0e0;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.section {
+  padding: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section h2 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.exp-card, .project-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.exp-card h3, .project-card h3 {
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.skill-group {
+  margin-bottom: 2rem;
+}
+
+.skill-group h3 {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.8rem;
+}
+
+.tech-badges span {
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.tech-badges span i {
+  font-size: 1rem;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 1rem;
+}
+
+.contact a {
+  font-size: 2rem;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #4ca1af;
+}
+
+.resume {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.resume a {
+  background: #2c3e50;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.resume a:hover {
+  background: #4ca1af;
+}
+
+.intro-section {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-out;
+}
+
+.intro-section p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 767px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .exp-card, .project-card {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tech-badges span {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  .contact a {
+    font-size: 1.5rem;
+  }
+
+  .resume a {
+    padding: 0.5rem 1rem;
+  }
+
+  .skill-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .skill-group h3 {
+    font-size: 1rem;
+  }
+
+  .intro-section {
+    padding: 2rem 2rem;
+  }
+
+  .intro-section p {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet responsiveness */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+  }
+
+  .exp-card, .project-card {
+    padding: 1.3rem;
+  }
+
+  .tech-badges span {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .contact a {
+    font-size: 1.8rem;
+  }
+
+  .resume a {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .intro-section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .intro-section p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Desktop responsiveness */
+@media screen and (min-width: 1025px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1.2rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .exp-card, .project-card {
+    padding: 1.5rem;
+  }
+
+  .tech-badges span {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .contact a {
+    font-size: 2rem;
+  }
+
+  .resume a {
+    padding: 0.7rem 1.5rem;
+  }
+
+  .intro-section {
+    padding: 3rem 2rem;
+  }
+
+  .intro-section p {
+    font-size: 1.25rem;
+  }
+}
+  </style>
 </head>
+
 <body>
-    <div class="header">
-        <a class="logo">Portfolio</a>
-        <div class="navbar">
-            <a href="./index.html" class="active">Home</a>
-            <a href="./about.html">About</a>
-            <a href="./skills.html">Skills</a>
-            <a href="./project.html">Projects</a>
-            <a href="./contact.html" >Contact</a>
-        </div>
+
+  <header>
+    <h1>Sathish Kumar V</h1>
+    <p>Software Engineer</p>
+  </header>
+
+  <section class="section intro-section">
+  <p>
+    I am a passionate Software Engineer with a deep interest in building innovative solutions. I am constantly striving to expand my expertise in both backend and frontend technologies, with a strong desire to become a full-stack developer. I enjoy tackling complex challenges and learning new tools and frameworks to build scalable, efficient applications. With experience in Java, Python, Android development, and cloud technologies, I aim to contribute to meaningful projects that make a difference in the world.
+  </p>
+</section>
+
+
+  <section class="section">
+  <h2>Experience</h2>
+  <div class="exp-card">
+    <h3>iXp Intern @ SAP Labs India</h3>
+    <ul style="padding-left: 1.2rem; margin-top: 0.8rem;">
+      <li>Developing Java backend services using Spring Boot for enterprise-level applications.</li>
+      <li>Integrated Java Instrumentation and ByteBuddy for dynamic runtime feature enhancements.</li>
+      <li>Designed and built IntelliJ IDEA plugins to enhance developer tooling and productivity.</li>
+      <li>Performed Integration Testing and developed unit test cases using JUnit frameworks.</li>
+      <li>Contributed to Automation Testing initiatives to ensure backend service reliability and stability.</li>
+      <li>Collaborated closely with cross-functional teams in an Agile environment.</li>
+    </ul>
+  </div>
+</section>
+
+
+  <section class="section">
+    <h2>Skills</h2>
+
+    <div class="skill-group">
+      <h3>Languages</h3>
+      <div class="tech-badges">
+        <span><i class="fab fa-java"></i> Java</span>
+        <span><i class="fab fa-python"></i> Python</span>
+        <span><i class="fas fa-database"></i> SQL</span>
+      </div>
     </div>
-    <section>
-        <div class="row" style="margin-left: 80px; margin-top: 40px;">
-            <div class="col-md w-100 ">
-                <div class="home-content">
-                    <h1>Hi,I'm <span class="name">Sathish Kumar</span></h1>
-                    <h3>And I'm a <span class="text"></span></h3>
-                    <p>I am a web developer and android developer, Currently Pursuing my Int.Mtech(Software engineering) in Vellore Institute Of Technology - Chennai Campus</p>
-                </div>
-                <div class="social-media">
-                    <a href="https://www.facebook.com/profile.php?id=100023994137946" target="_blank"><i class='bx bxl-facebook'></i></a>
-                    <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
-                    <a href="https://www.instagram.com/king.of.my.life_/" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
-                    <a href="https://www.linkedin.com/in/sathish-kumar-2719601ba/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                </div>
-                <div class="buttons">
-                    <a href="https://drive.google.com/file/d/1_-bly_Ttk9Eneee-9k-xO48LlveAUaWo/view?usp=sharing"  target="_blank" class="cv">Download CV</a>
-                    <p onclick='window.location.href="project.html"'; class="seeprojects">See Projects</p>
-                </div>
-            </div>
-            <div class="col-md  w-100">
-                    <img style="width:300px; " src="images/InShot_20240107_223451493.jpg" alt="image">
-            </div>
-        </div>
-    </section>
 
- 
+    <div class="skill-group">
+      <h3>Frameworks & Tools</h3>
+      <div class="tech-badges">
+        <span><i class="fab fa-spring"></i> Spring Boot</span>
+        <span><i class="fas fa-plug"></i> REST APIs</span>
+        <span><i class="fas fa-vial"></i> JUnit</span>
+        <span><i class="fas fa-magic"></i> ByteBuddy</span>
+        <span><i class="fas fa-plug"></i> IntelliJ Plugin Dev</span>
+        <span><i class="fab fa-git-alt"></i> Git</span>
+        <span><i class="fab fa-github"></i> GitHub</span>
+        <span><i class="fas fa-tools"></i> Maven</span>
+        <span><i class="fas fa-tools"></i> Gradle</span>
+        <span><i class="fab fa-jira"></i> Jira</span>
+        <span><i class="fab fa-docker"></i> Docker</span>
+        <span><i class="fas fa-bolt"></i> Postman</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Frontend & Mobile</h3>
+      <div class="tech-badges">
+        <span><i class="fab fa-html5"></i> HTML</span>
+        <span><i class="fab fa-css3-alt"></i> CSS</span>
+        <span><i class="fab fa-bootstrap"></i> Bootstrap</span>
+        <span><i class="fab fa-android"></i> Android Studio</span>
+        <span><i class="fas fa-mobile-alt"></i> Jetpack Compose</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Libraries & Platforms</h3>
+      <div class="tech-badges">
+        <span><i class="fas fa-fire"></i> Firebase</span>
+        <span><i class="fas fa-brain"></i> PyTorch</span>
+        <span><i class="fas fa-robot"></i> scikit-learn</span>
+        <span><i class="fas fa-camera"></i> OpenCV</span>
+        <span><i class="fas fa-hand-sparkles"></i> MediaPipe</span>
+        <span><i class="fas fa-cogs"></i> NumPy</span>
+        <span><i class="fas fa-cogs"></i> Pandas</span>
+      </div>
+    </div>
+  </section>
+
+<section class="section">
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>Hand Gesture Recognition</h3>
+    <p>
+      Developed a real-time <strong>Hand Gesture Recognition</strong> system to interpret sign language gestures and aid communication for hearing-impaired individuals.
+    </p>
+    <ul style="padding-left: 1.2rem; margin-top: 0.8rem;">
+      <li>Built real-time hand gesture recognition using OpenCV and MediaPipe.</li>
+      <li>Trained classification models using scikit-learn for high-accuracy predictions.</li>
+      <li>Optimized models for lightweight, mobile-friendly performance.</li>
+      <li>Integrated real-time video analysis with gesture overlays.</li>
+    </ul>
+    <div class="tech-badges">
+      <span><i class="fas fa-fire"></i> Python</span>
+      <span><i class="fas fa-camera"></i> OpenCV</span>
+      <span><i class="fas fa-hand-sparkles"></i> MediaPipe</span>
+      <span><i class="fas fa-robot"></i> scikit-learn</span>
+    </div>
+    <a href="https://github.com/sathishkumar0909/Hand-gesture-recognition" target="_blank">GitHub Repository</a>
+  </div>
+
+  <div class="project-card">
+    <h3>Smart Lock Hub</h3>
+    <p>
+      Designed and developed an <strong>IoT-based Smart Locker</strong> system for secure, last-mile delivery management.
+    </p>
+    <ul style="padding-left: 1.2rem; margin-top: 0.8rem;">
+      <li>Built hardware integration using ESP32 microcontrollers and Firebase backend.</li>
+      <li>Implemented solenoid locks and proximity sensors for real-time package handling.</li>
+      <li>Developed an Android app for locker access, status tracking, and notifications.</li>
+      <li>Focused on secure authentication, real-time database syncing, and user-centric design.</li>
+    </ul>
+    <div class="tech-badges">
+      <span><i class="fab fa-android"></i> Arduino (ESP32)</span>
+      <span><i class="fas fa-fire"></i> Firebase</span>
+      <span><i class="fab fa-android"></i> Android Studio</span>
+    </div>
+    <a href="https://github.com/sathishkumar0909/LockerHub-App" target="_blank">GitHub Repository</a>
+  </div>
+
+  <div class="project-card">
+    <h3>Student App</h3>
+    <p>
+      Created a full-fledged <strong>Academic Management Application</strong> to streamline student and faculty academic processes.
+    </p>
+    <ul style="padding-left: 1.2rem; margin-top: 0.8rem;">
+      <li>Developed features for student profiles, marks tracking, attendance, and exam schedules.</li>
+      <li>Built faculty and proctor communication modules for easy interactions.</li>
+      <li>Optimized app for offline usage and fast Firebase data synchronization.</li>
+      <li>Designed a responsive and intuitive UI for a seamless academic experience.</li>
+    </ul>
+    <div class="tech-badges">
+      <span><i class="fab fa-java"></i> Java</span>
+      <span><i class="fab fa-android"></i> Android Studio</span>
+      <span><i class="fas fa-fire"></i> Firebase</span>
+    </div>
+    <a href="https://github.com/sathishkumar0909/Student-App" target="_blank">GitHub Repository</a>
+  </div>
+
+</section>
 
 
 
- 
-   
+
+  <section class="section">
+    <h2>Contact</h2>
+    <div class="contact">
+      <a href="mailto:sathishkumar09092002@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/sathish-kumar-2719601ba/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/sathishkumar0909" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
 </body>
-<script>
-    var typed=new Typed(".text",{
-        strings:["Frontend Developer","Web Developer","Android Developer"],
-        typeSpeed:100,
-        backSpeed:100,
-        backDelay:1000,
-        loop:true
-    })
-   
-</script>
 </html>
